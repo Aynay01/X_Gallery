@@ -38,15 +38,16 @@
 </head>
 <body>
     <h1>Photo Gallery</h1>
-    <div class="gallery-container">
-        {% for photo in photos %}
-            <div class="gallery-item">
-                <img src="{{ photo.image_url }}" alt="{{ photo.description }}">
-                <p>{{ photo.description }}</p>
-            </div>
-        {% empty %}
-            <p>No photos available.</p>
-        {% endfor %}
+    <div class="gallery">
+        {% if photos %}
+            {% for photo in photos %}
+                <div class="gallery-item">
+                    <img src="{{ url }}" alt="Twitter Image">
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No images found.</p>
+        {% endif %}
     </div>
 </body>
 </html>

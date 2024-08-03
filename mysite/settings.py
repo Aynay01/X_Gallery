@@ -128,8 +128,9 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Twitter API credentials
-TWITTER_API_KEY = 'your_consumer_key_here'
-TWITTER_API_SECRET_KEY = 'your_consumer_secret_key_here'
-TWITTER_ACCESS_TOKEN = 'your_access_token_here'
-TWITTER_ACCESS_TOKEN_SECRET = 'your_access_token_secret_here'
+from decouple import config
+
+TWITTER_API_KEY = config('TWITTER_API_KEY')
+TWITTER_API_SECRET_KEY = config('TWITTER_API_SECRET_KEY')
+TWITTER_ACCESS_TOKEN = config('TWITTER_ACCESS_TOKEN')
+TWITTER_ACCESS_TOKEN_SECRET = config('TWITTER_ACCESS_TOKEN_SECRET')
