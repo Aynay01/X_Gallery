@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .gallery-item {
+            margin: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            width: 300px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-item p {
+            padding: 10px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Photo Gallery</h1>
+    <div class="gallery-container">
+        {% for photo in photos %}
+            <div class="gallery-item">
+                <img src="{{ photo.image_url }}" alt="{{ photo.description }}">
+                <p>{{ photo.description }}</p>
+            </div>
+        {% empty %}
+            <p>No photos available.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
