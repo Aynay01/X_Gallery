@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from decouple import config
 from pathlib import Path
+from TwitterAPI import TwitterAPI
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -125,3 +127,9 @@ STATIC_ROOT = BASE_DIR / 'static'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Twitter API credentials
+TWITTER_API_KEY = 'your_consumer_key_here'
+TWITTER_API_SECRET_KEY = 'your_consumer_secret_key_here'
+TWITTER_ACCESS_TOKEN = 'your_access_token_here'
+TWITTER_ACCESS_TOKEN_SECRET = 'your_access_token_secret_here'
